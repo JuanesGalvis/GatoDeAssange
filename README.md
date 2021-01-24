@@ -1,6 +1,6 @@
 # Gato De Assange
 
-![Logotipo del gato de Assange]('./src/assets/logo.png' "Logotipo del gato de Assange")
+![Logotipo del gato de Assange](https://github.com/JuanesGalvis/GatoDeAssange/blob/master/src/assets/logo.png?raw=true "Logotipo del gato de Assange")
 
 ## Instalar Dependencias
 ```
