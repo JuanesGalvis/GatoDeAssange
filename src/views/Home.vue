@@ -6,13 +6,25 @@
     </div>
     <main class="Articulos">
       <h2>Tecnología</h2>
-      <section id="Tec"></section>
+      <section id="Tec">
+        <article class="articulo" v-for="art in articulos" :key="art._id">
+            <p v-if="art.categoria == 'Tecnología'"> {{ art.titulo }} </p>
+        </article>
+      </section>
       
       <h2>Sociedad</h2>
-      <section id="Soc"></section>
+      <section id="Soc">
+        <article class="articulo" v-for="art in articulos" :key="art._id">
+            <p v-if="art.categoria == 'Sociedad'"> {{ art.titulo }} </p>
+        </article>
+      </section>
 
       <h2>Política</h2>
-      <section id="Pol"></section>
+      <section id="Pol">
+        <article class="articulo" v-for="art in articulos" :key="art._id">
+            <p v-if="art.categoria == 'Política'"> {{ art.titulo }} </p>
+        </article>
+      </section>
 
     </main>
     <Footer />
@@ -27,13 +39,28 @@ import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
+  data() {
+    return {
+      articulos: [],
+      msg: "Funciona!",
+    }
+  },
   components: {
     Header,
     Footer
   },
-  async created() {
-    const data = await fetch('/api/');
-    console.log(data.json());
+  created() {
+      this.GetData();
+  },
+  methods: {
+    GetData() {
+            fetch('/api/')
+            .then(res => res.json())
+            .then(data => {
+                this.articulos = [...data];
+                // console.log(this.articulos[1]._id);
+            })
+        },
   }
 }
 
