@@ -1,24 +1,33 @@
-# gato_assange
+# Gato De Assange
 
-## Project setup
+![Logotipo del gato de Assange]('./src/assets/logo.png' "Logotipo del gato de Assange")
+
+## Instalar Dependencias
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Desplegar servidor
 ```
-npm run serve
+npm run dev
 ```
 
-### Compiles and minifies for production
+### Compilar Vue
 ```
 npm run build
 ```
 
-### Run your unit tests
+### Probar Tests
 ```
 npm run test:unit
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Librerías:
+- Express.js
+- Mongoose
+- Vue
+- Vue-router
+- Vuex
+- Babel
+- Jest
+- Sass
