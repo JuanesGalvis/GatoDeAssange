@@ -25,6 +25,9 @@ app.use(require('./routes/routes.js'))
 
 // desplegar staticos y servidor
 app.use('/', express.static(__dirname+'/dist'))
+app.use('/caricaturas', express.static(__dirname+'/dist'))
+app.use('/podcast', express.static(__dirname+'/dist'))
+
 app.listen(app.get('port'), () => {
     console.log('Servidor Corriendo');
 })

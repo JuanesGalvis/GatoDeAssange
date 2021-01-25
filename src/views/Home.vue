@@ -6,23 +6,23 @@
     </div>
     <main class="Articulos">
       <h2>Tecnología</h2>
-      <section id="Tec">
-        <article class="articulo" v-for="art in articulos" :key="art._id">
-            <p v-if="art.categoria == 'Tecnología'"> {{ art.titulo }} </p>
+      <section class="Secciones">
+        <article class="articulo" v-for="art in ArtTec" :key="art._id">
+            <img :src="art.imagen" :alt="art.titulo">
         </article>
       </section>
       
       <h2>Sociedad</h2>
-      <section id="Soc">
-        <article class="articulo" v-for="art in articulos" :key="art._id">
-            <p v-if="art.categoria == 'Sociedad'"> {{ art.titulo }} </p>
+      <section class="Secciones">
+        <article class="articulo" v-for="art in ArtSoc" :key="art._id">
+            <img :src="art.imagen" :alt="art.titulo">
         </article>
       </section>
 
       <h2>Política</h2>
-      <section id="Pol">
-        <article class="articulo" v-for="art in articulos" :key="art._id">
-            <p v-if="art.categoria == 'Política'"> {{ art.titulo }} </p>
+      <section class="Secciones">
+        <article class="articulo" v-for="art in ArtPol" :key="art._id">
+          <img :src="art.imagen" :alt="art.titulo">
         </article>
       </section>
 
@@ -42,7 +42,9 @@ export default {
   data() {
     return {
       articulos: [],
-      msg: "Funciona!",
+      ArtTec: [],
+      ArtSoc: [],
+      ArtPol: []
     }
   },
   components: {
@@ -58,7 +60,25 @@ export default {
             .then(res => res.json())
             .then(data => {
                 this.articulos = [...data];
-                // console.log(this.articulos[1]._id);
+                for (let i = 0; i < this.articulos.length; i++) {
+                   
+                   let categoria = this.articulos[i].categoria;
+                   
+                   switch (categoria) {
+                     case 'Tecnología':
+                          this.ArtTec.push(this.articulos[i])
+                       break;
+
+                     case 'Sociedad':
+                          this.ArtSoc.push(this.articulos[i])
+                       break;
+
+                     case 'Política':
+                          this.ArtPol.push(this.articulos[i])
+                       break;
+                   }
+                  
+                }
             })
         },
   }
@@ -93,5 +113,19 @@ export default {
     margin-left: 10px;
     padding: 20px 0px;
   }
+
+  .Secciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 10px;
+    
+    .articulo {
+      img {
+        border-radius: 10px;
+        width: 90%;
+      }
+    }
+  }
+
 
 </style>
