@@ -2,7 +2,7 @@
     <footer class="Footer">
         <h2>Si te gusta mi contenido:</h2>
         <div class="Footer__Botones">
-            <button class="Btn_Suscp">Suscribirse <i class="far fa-bell"></i> </button>
+            <router-link to="/suscripcion"><button class="Btn_Suscp">Suscribirse <i class="far fa-bell"></i> </button></router-link>
             <button class="Btn_Donar"><i class="fas fa-hand-holding-usd"></i> Donar</button>
         </div>
     </footer>
