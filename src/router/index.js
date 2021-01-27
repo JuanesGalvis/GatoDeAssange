@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Caricaturas from '../views/Caricaturas.vue'
 import Podcasts from '../views/Podcasts.vue'
 import Suscripcion from '../views/Suscripcion.vue'
+import Donar from '../views/Donar.vue'
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     path: '/suscripcion',
     name: 'Suscripcion',
     component: Suscripcion
+  },
+  {
+    path: '/donar',
+    name: 'Donar',
+    component: Donar
   },
 ]
 

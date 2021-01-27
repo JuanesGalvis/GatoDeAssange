@@ -35,6 +35,7 @@ app.use('/', express.static(__dirname+'/dist'))
 app.use('/caricaturas', express.static(__dirname+'/dist'))
 app.use('/podcast', express.static(__dirname+'/dist'))
 app.use('/suscripcion', express.static(__dirname+'/dist'))
+app.use('/donar', express.static(__dirname+'/dist'))
 
 app.listen(app.get('port'), () => {
     console.log('Servidor Corriendo');
