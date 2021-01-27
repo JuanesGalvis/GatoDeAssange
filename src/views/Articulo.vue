@@ -82,25 +82,25 @@ export default {
                 this.imagen = data.imagen
                 this.categoria = data.categoria
                 this.link = data.Link
-                this.GetComentarios(id)
+                this.GetComentarios(data.titulo)
             })
         },
 
-        GetComentarios(id) {
-            fetch('/api/'+id)
+        GetComentarios(title) {
+            fetch('/api/comentarios/'+title)
             .then(response => response.json())
             .then((data) => {
-                this.comentarios = [...data.Comentarios]
+                this.comentarios = [...data]
             })
         },
 
         SendComentario () {
-            const id = localStorage.getItem('ArtId')
             const AddComentario = {
-                contenido: this.newComentario
+                contenido: this.newComentario,
+                titulo_origen: this.title
             }
 
-            fetch('/api/comentario/'+id, {
+            fetch('/api/new_comentario', {
                 method: 'POST',
                 body: JSON.stringify(AddComentario),
                 headers: {
@@ -109,7 +109,7 @@ export default {
                 }
             })
             .then(() => { 
-                this.GetComentarios(id)
+                this.GetComentarios(this.title)
             })
             
         }

@@ -6,6 +6,7 @@ const Cart = require('../models/Caricaturas')
 const Pods = require('../models/Podcasts')
 
 const Suscriptor = require('../models/Suscriptor')
+const Comentario = require('../models/Comentario')
 
 const Pedir_Caricatura = require('../models/PedirCaricatura')
 const Pedir_Podcast = require('../models/PedirPodcast')
@@ -57,17 +58,19 @@ router.get('/api/:id', async (req, res) => {
     res.json(Articulo)
 })
 
-router.post('/api/comentario/:id', async (req, res) => {
+router.post('/api/new_comentario', async (req, res) => {
     
-    // TODO: NO FUNCIONA TODAVÍA
-    const Comentario = await Art.findByIdAndUpdate( req.params.id, 
-        {$addToSet : {Comentarios:  {
-            _id: require('mongodb').ObjectID,
-            contenido: req.body.contenido}
-            }
-        });
-     
-    res.json(Comentario)
+    const NewComentario = await Comentario(req.body)
+    await NewComentario.save();
+    res.json({
+        status: 'Comentario Agregado Correctamente'
+    })
+})
+
+router.get('/api/comentarios/:title', async (req, res) => {
+
+    const Comentarios = await Comentario.find({ titulo_origen: req.params.title })
+    res.json(Comentarios)
 })
 
 module.exports = router;
