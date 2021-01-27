@@ -30,8 +30,8 @@
         <h2>Comentarios</h2>
         <hr>
         <div class="Input__Comentario">
-            <textarea name="Comentario" id="Comentario" cols="30" rows="4" placeholder="Comentario"></textarea>
-            <i class="far fa-paper-plane"></i>
+            <textarea name="Comentario" id="Comentario" cols="30" rows="4" placeholder="Comentario" v-model="newComentario"></textarea>
+            <i class="far fa-paper-plane" @click="SendComentario()"></i>
         </div>  
         <hr>
 
@@ -59,7 +59,8 @@ export default {
             categoria: '',
             imagen: '',
             link: '',
-            comentarios: []
+            comentarios: [],
+            newComentario: ''
         }
     },
     components: {
@@ -81,9 +82,36 @@ export default {
                 this.imagen = data.imagen
                 this.categoria = data.categoria
                 this.link = data.Link
+                this.GetComentarios(id)
+            })
+        },
+
+        GetComentarios(id) {
+            fetch('/api/'+id)
+            .then(response => response.json())
+            .then((data) => {
                 this.comentarios = [...data.Comentarios]
             })
+        },
 
+        SendComentario () {
+            const id = localStorage.getItem('ArtId')
+            const AddComentario = {
+                contenido: this.newComentario
+            }
+
+            fetch('/api/comentario/'+id, {
+                method: 'POST',
+                body: JSON.stringify(AddComentario),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            })
+            .then(() => { 
+                this.GetComentarios(id)
+            })
+            
         }
     }
 }

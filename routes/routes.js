@@ -57,4 +57,17 @@ router.get('/api/:id', async (req, res) => {
     res.json(Articulo)
 })
 
+router.post('/api/comentario/:id', async (req, res) => {
+    
+    // TODO: NO FUNCIONA TODAVÍA
+    const Comentario = await Art.findByIdAndUpdate( req.params.id, 
+        {$addToSet : {Comentarios:  {
+            _id: require('mongodb').ObjectID,
+            contenido: req.body.contenido}
+            }
+        });
+     
+    res.json(Comentario)
+})
+
 module.exports = router;
