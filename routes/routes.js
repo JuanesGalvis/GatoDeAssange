@@ -51,5 +51,10 @@ router.post('/pedir_podcast', async (req, res) => {
     })
 })
 
+router.get('/api/:id', async (req, res) => {
+    
+    const Articulo = await Art.findById(req.params.id);
+    res.json(Articulo)
+})
 
 module.exports = router;

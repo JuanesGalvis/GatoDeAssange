@@ -7,6 +7,7 @@ import Suscripcion from '../views/Suscripcion.vue'
 import Donar from '../views/Donar.vue'
 import PedirCaricatura from '../views/PedirCaricatura.vue'
 import PedirPodcast from '../views/PedirPodcast.vue'
+import Articulo from '../views/Articulo.vue'
 
 const routes = [
   {
@@ -43,6 +44,11 @@ const routes = [
     path: '/pedir_podcast',
     name: 'Pedir Podcast',
     component: PedirPodcast
+  },
+  {
+    path: '/articulo',
+    name: 'Articulo',
+    component: Articulo
   },
 ]
 
