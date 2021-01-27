@@ -14,5 +14,17 @@
 
 body {
   background-color: $Principal-Blanco;
+
+  a {
+    text-decoration: none;
+
+    button {
+      cursor: pointer;
+    }
+  }
+
+  button {
+    cursor: pointer;
+  }
 }
 </style>

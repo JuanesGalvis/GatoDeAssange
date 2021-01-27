@@ -22,10 +22,24 @@
             </p>
         </section>
 
-        <button class="Btn_Articulo">
+        <a :href="link" target="_blank"><button class="Btn_Articulo">
             <span>Leer Artículo</span>
             <img src="../assets/Btn_Leer_Articulo.png" alt="Gato con documentos y gafas">  
-        </button>
+        </button></a>
+
+        <h2>Comentarios</h2>
+        <hr>
+        <div class="Input__Comentario">
+            <textarea name="Comentario" id="Comentario" cols="30" rows="4" placeholder="Comentario"></textarea>
+            <i class="far fa-paper-plane"></i>
+        </div>  
+        <hr>
+
+        <section class="Comentarios">
+            <article class="Comentarios__Item" v-for="comentario in comentarios" :key="comentario.id">
+                <p> {{ comentario.contenido }} </p>
+            </article>
+        </section>
 
     <Footer />
     </main>
@@ -43,7 +57,9 @@ export default {
             title: '',
             sinopsis: '',
             categoria: '',
-            imagen: ''
+            imagen: '',
+            link: '',
+            comentarios: []
         }
     },
     components: {
@@ -64,6 +80,8 @@ export default {
                 this.sinopsis = data.sinapsis
                 this.imagen = data.imagen
                 this.categoria = data.categoria
+                this.link = data.Link
+                this.comentarios = [...data.Comentarios]
             })
 
         }
@@ -129,31 +147,88 @@ export default {
         height: 40px;
     }
 
-    .Btn_Articulo {
-        width: 280px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 50px auto 10px auto;
-        font-family: $FuenteTitlos;
-        border: $Principal-Azul 5px solid;
-        border-radius: 100px;
-        background-color: $Principal-Blanco;
+    a {
+        text-decoration: none;
 
-        span {
-        text-align: left;
-        font-size: 16px;
-        padding-left: 10px;
+        .Btn_Articulo {
+            width: 280px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 50px auto 10px auto;
+            font-family: $FuenteTitlos;
+            border: $Principal-Azul 5px solid;
+            border-radius: 100px;
+            background-color: $Principal-Blanco;
+
+            span {
+            text-align: left;
+            font-size: 16px;
+            padding-left: 10px;
+            width: 100%;
+            color: $Principal-Azul;
+            }
+
+            img {
+            width: 50%;
+            margin-top: -80px;
+            }
+        }
+    }
+    hr {
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+        padding: 3px 0px;
+        background-color: $Dark;
+        border-radius: 10px;
+    }
+
+    .Input__Comentario {
         width: 100%;
-        color: $Principal-Azul;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+        position: relative;
+        textarea {
+            width: 85%;
+            margin: 0 auto;
+            border: 0;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+            background-color: $Fondo-Blanco;
+            font-family: $FuenteContenidos;
+            padding: 10px;
         }
 
-        img {
-        width: 50%;
-        margin-top: -80px;
+        i.fa-paper-plane {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            color: $Principal-Blanco;
+            background-color: $Dark;
+            font-size: 18px;
+            padding: 5px;
+            border-radius: 100%;
         }
     }
 
+    .Comentarios {
+        width: 90%;
+        margin: 0 auto;
+        text-align: left;
+        font-family: $FuenteContenidos;
+        color: $Principal-Blanco;
+
+        &__Item {
+            width: 95%;
+            padding: 10px 5px;
+            border-radius: 5px;
+            background-color: $Dark;
+            margin: 10px auto;
+        }
+    }
 }
 
 
