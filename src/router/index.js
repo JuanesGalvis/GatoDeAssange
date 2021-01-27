@@ -5,6 +5,8 @@ import Caricaturas from '../views/Caricaturas.vue'
 import Podcasts from '../views/Podcasts.vue'
 import Suscripcion from '../views/Suscripcion.vue'
 import Donar from '../views/Donar.vue'
+import PedirCaricatura from '../views/PedirCaricatura.vue'
+import PedirPodcast from '../views/PedirPodcast.vue'
 
 const routes = [
   {
@@ -31,6 +33,16 @@ const routes = [
     path: '/donar',
     name: 'Donar',
     component: Donar
+  },
+  {
+    path: '/pedir_caricatura',
+    name: 'Pedir Caricatura',
+    component: PedirCaricatura
+  },
+  {
+    path: '/pedir_podcast',
+    name: 'Pedir Podcast',
+    component: PedirPodcast
   },
 ]
 

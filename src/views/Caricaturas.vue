@@ -5,10 +5,11 @@
       <h1 class="Banner__Caricatura">"Este país se escandaliza porque uno dice HIJUEPUTA en televisión, pero no se escandaliza cuando hay niños limpiando vidrios y pidiendo limosnas"</h1>
     </div>
 
-    <button class="Btn_Caricatura">
+    <router-link to="/pedir_caricatura"> <button class="Btn_Caricatura">
       <span>Pedir Caricatura</span>
       <img src="../assets/Btn_Pedir_Caricatura.png" alt="Gato con una tableta digitalizadora">  
     </button>
+    </router-link>
 
     <main id="Caricaturas">
       <article class="caricatura" v-for="caricatura in caricaturas" :key="caricatura._id">

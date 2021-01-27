@@ -5,10 +5,12 @@
       <h1 class="Banner__Podcasts">"Facebook y EEUU te escuchan. Tú escuchame a mí"</h1>
     </div>
 
+    <router-link to="/pedir_podcast">
     <button class="Btn_Caricatura">
       <span>Sugerir Podcast</span>
       <img src="../assets/Btn_Pedir_Podcast.png" alt="Gato con audifonos">  
     </button>
+    </router-link>
 
     <main id="Podcasts">
       <article class="Podcast" v-for="podcast in Podcasts" :key="podcast._id">
