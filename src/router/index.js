@@ -8,6 +8,7 @@ import Donar from '../views/Donar.vue'
 import PedirCaricatura from '../views/PedirCaricatura.vue'
 import PedirPodcast from '../views/PedirPodcast.vue'
 import Articulo from '../views/Articulo.vue'
+import NotFound from '../views/NotFound.vue'
 
 const routes = [
   {
@@ -49,6 +50,11 @@ const routes = [
     path: '/articulo',
     name: 'Articulo',
     component: Articulo
+  },
+  {
+    path: '/not_Found',
+    name: 'Not Found',
+    component: NotFound
   },
 ]
 

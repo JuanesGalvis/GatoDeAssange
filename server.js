@@ -42,6 +42,14 @@ app.use('/pedir_podcast', express.static(__dirname+'/dist'))
 
 app.use('/articulo', express.static(__dirname+'/dist'))
 
+app.use('/not_Found', express.static(__dirname+'/dist'))
+
+app.use((req, res) => {
+    if (res.status(404)) {
+        res.redirect('/not_Found')
+    }
+})
+
 app.listen(app.get('port'), () => {
     console.log('Servidor Corriendo');
 })
