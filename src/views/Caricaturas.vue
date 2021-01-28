@@ -14,11 +14,6 @@
     </router-link>
       <article class="caricatura" v-for="caricatura in caricaturas" :key="caricatura._id">
         <img :src="caricatura.caricatura" :alt="caricatura.descripcion">
-        <div class="Share">
-          <i class="fab fa-telegram-plane"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-twitter"></i>
-        </div>
       </article>
     <Footer />
     </main>
@@ -133,19 +128,7 @@ export default {
 
         img {
           width: 100%;
-        }
-
-        .Share {
-          width: 100%;
-          background-color: $Dark;
-          display: flex;
-          justify-content: space-around;
-          color: $Principal-Blanco;
-          text-align: center;
-          align-items: center;
-          font-size: 23px;
-          border-radius: 0px 0px 10px 10px;
-          height: 40px;
+          border-radius: 10px;
         }
     }
   }

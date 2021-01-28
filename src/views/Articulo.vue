@@ -25,8 +25,8 @@
             <h2>Comentarios</h2>
             <hr>
             <div class="Input__Comentario">
-                <textarea name="Comentario" id="Comentario" cols="30" rows="4" placeholder="Comentario" v-model="newComentario"></textarea>
-                <i class="far fa-paper-plane" @click="SendComentario()"></i>
+                <textarea name="Comentario" id="Comentario" cols="30" rows="4" placeholder="Comentario" v-model="newComentario" @keypress="DetectarKeyPress($event)"></textarea>
+                <i class="far fa-paper-plane" @click="SendComentario()" ></i>
             </div>  
             <hr>
 
@@ -105,8 +105,15 @@ export default {
             })
             .then(() => { 
                 this.GetComentarios(this.title)
+                this.newComentario = ''
             })
             
+        },
+
+        DetectarKeyPress(e) {
+            if(e.keyCode == 13) {
+                this.SendComentario()
+            }
         }
     }
 }

@@ -18,11 +18,6 @@
         <h4> {{ podcast.titulo }} </h4>
         <p> {{ podcast.descripcion }} </p>
         <h3 v-if="podcast.invitado != 'Ninguno'" > Invitado: {{ podcast.invitado  }} </h3>
-        <div class="Share">
-          <i class="fab fa-telegram-plane"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-twitter"></i>
-        </div>
       </article>
     <Footer />
     </main>
@@ -165,25 +160,6 @@ export default {
           color: $Texto-Gris;
           width: 100%;
           margin: 16px auto;
-        }
-
-        .Share {
-          width: 100%;
-          background-color: $Dark;
-          display: flex;
-          justify-content: space-around;
-          color: $Principal-Blanco;
-          text-align: center;
-          align-items: center;
-          font-size: 23px;
-          border-radius: 10px;
-          height: 40px;
-        
-          @media screen and (min-width: 880px) {
-              width: 70%;
-              margin: 0 auto;
-          }
-        
         }
       }
   }

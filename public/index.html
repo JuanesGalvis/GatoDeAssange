@@ -6,13 +6,26 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
-    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6012520ea251a60019629289&product=inline-share-buttons" async="async"></script>
+    <meta name="description" content="Blog de Juan Esteban Galvis Bedoya para compartir artículos sobre Tecnología, Política y Sociedad. Además de Caricaturas y futuros Podcast">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "WebSite",
+        "name": "El Gato de Assange",
+        "url": "",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "{search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+      </script>
+
   </head>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
-    <!-- built files will be auto injected -->
   </body>
 </html>

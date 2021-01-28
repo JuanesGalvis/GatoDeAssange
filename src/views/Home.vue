@@ -8,21 +8,21 @@
       <h2>Tecnología</h2>
       <section class="Secciones">
         <article class="articulo" v-for="art in ArtTec" :key="art._id">
-            <img :src="art.imagen" :alt="art.titulo" @click="IdURL(art._id)">
+            <img :src="art.imagen" :alt="art.titulo" @click="IdURL(art._id)" :aria-label="art.titulo">
         </article>
       </section>
       
       <h2>Sociedad</h2>
       <section class="Secciones">
         <article class="articulo" v-for="art in ArtSoc" :key="art._id">
-            <img :src="art.imagen" :alt="art.titulo" @click="IdURL(art._id)">
+            <img :src="art.imagen" :alt="art.titulo" @click="IdURL(art._id)" :aria-label="art.titulo">
         </article>
       </section>
 
       <h2>Política</h2>
       <section class="Secciones">
         <article class="articulo" v-for="art in ArtPol" :key="art._id">
-          <img :src="art.imagen" :alt="art.titulo" @click="IdURL(art._id)">
+          <img :src="art.imagen" :alt="art.titulo" @click="IdURL(art._id)" :aria-label="art.titulo">
         </article>
       </section>
 
