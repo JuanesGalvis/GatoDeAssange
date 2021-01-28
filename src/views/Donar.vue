@@ -1,14 +1,16 @@
 <template>
-    <Header active="0"/>
-    <main class="Donar">
-        <h1>Suscribirse</h1>
-        <p>Gracias por apoyar el contenido! Puedes donar mediante Nequi con el siguiente código QR:</p>
+    <div class="Donar_Principal">
+        <Header active="0"/>
+        <main class="Donar">
+            <h1>Donar</h1>
+            <p>Gracias por apoyar el contenido! Puedes donar mediante Nequi con el siguiente código QR:</p>
 
-        <section class="Donar__Nequi">
-            <img src="../assets/QR-Tutorial.jpg" alt="Tutorial dentro de Nequi para pagar con el QR">
-            <img src="../assets/QR.jpg" alt="Código QR para donar mediante Nequi Bancolombia">            
-        </section>
-    </main>
+            <section class="Donar__Nequi">
+                <img src="../assets/QR-Tutorial.jpg" alt="Tutorial dentro de Nequi para pagar con el QR">
+                <img src="../assets/QR.jpg" alt="Código QR para donar mediante Nequi Bancolombia">            
+            </section>
+        </main>
+    </div>
 </template>
 
 <script>
@@ -24,6 +26,15 @@ export default {
 
 <style lang="scss">
 @import '../styles/global.scss';
+
+    .Donar_Principal {
+        height: 100vh;
+        @media screen and (min-width: 530px){
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 
     .Donar {
         width: 90%;

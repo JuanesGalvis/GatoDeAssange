@@ -137,6 +137,14 @@ export default {
 <style lang="scss">
 @import '../styles/global.scss';
 
+ .Suscripcion { 
+   @media screen and (min-width: 530px){
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+ }
+
 .Form_Suscripcion {
   width: 90%;
   margin: 0 auto;

@@ -1,6 +1,8 @@
 <template>
-  <div class="caricatura">
+  <div class="Principal">
     <Header active="2"/>
+
+    <main id="Caricaturas">
     <div class="Banner">
       <h1 class="Banner__Caricatura">"Este país se escandaliza porque uno dice HIJUEPUTA en televisión, pero no se escandaliza cuando hay niños limpiando vidrios y pidiendo limosnas"</h1>
     </div>
@@ -10,8 +12,6 @@
       <img src="../assets/Btn_Pedir_Caricatura.png" alt="Gato con una tableta digitalizadora">  
     </button>
     </router-link>
-
-    <main id="Caricaturas">
       <article class="caricatura" v-for="caricatura in caricaturas" :key="caricatura._id">
         <img :src="caricatura.caricatura" :alt="caricatura.descripcion">
         <div class="Share">
@@ -20,9 +20,9 @@
           <i class="fab fa-twitter"></i>
         </div>
       </article>
+    <Footer />
     </main>
 
-    <Footer />
   </div>
 </template>
 
@@ -61,6 +61,14 @@ export default {
 
 <style lang="scss">
 @import '../styles/global.scss';
+
+  .Principal {
+    @media screen and (min-width: 530px){
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
 
   .Banner {
     background-image: url('../assets/Banner.png');
@@ -107,11 +115,11 @@ export default {
   }
 
   #Caricaturas {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 
     .caricatura {
-
+        width: 90%;
         margin: 28px auto;
 
         img {

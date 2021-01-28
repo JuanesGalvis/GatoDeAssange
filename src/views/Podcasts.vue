@@ -1,6 +1,8 @@
 <template>
-  <div class="podcasts">
+  <div class="PodcastRoot">
+
     <Header active="3"/>
+    <main id="Podcasts">
     <div class="Banner">
       <h1 class="Banner__Podcasts">"Facebook y EEUU te escuchan. Tú escuchame a mí"</h1>
     </div>
@@ -11,8 +13,6 @@
       <img src="../assets/Btn_Pedir_Podcast.png" alt="Gato con audifonos">  
     </button>
     </router-link>
-
-    <main id="Podcasts">
       <article class="Podcast" v-for="podcast in Podcasts" :key="podcast._id">
         <img class="Podcast__Disco" :src="podcast.imagen" :alt="podcast.descripcion">
         <h4> {{ podcast.titulo }} </h4>
@@ -24,9 +24,8 @@
           <i class="fab fa-twitter"></i>
         </div>
       </article>
-    </main>
-
     <Footer />
+    </main>
   </div>
 </template>
 
@@ -42,21 +41,6 @@ export default {
     Header,
     Footer
   },
-  // setup() {
-  //   let 
-
-  //   fetch('/api/podcasts')
-  //     .then(res => res.json()      
-  //     )
-  //     .then((data) => {
-  //       Podcasts = {...data}
-  //       console.log(Podcasts);
-  //     })
-      
-  //     return {
-  //       Podcasts
-  //     }
-  // }
   data() {
     return {
       Podcasts: []
@@ -81,6 +65,14 @@ export default {
 
 <style lang="scss">
 @import '../styles/global.scss';
+
+  .PodcastRoot {
+    @media screen and (min-width: 530px){
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
 
   .Banner {
     background-image: url('../assets/Banner.png');
@@ -128,9 +120,10 @@ export default {
   }
 
   #Podcasts {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
       .Podcast {
+        width: 90%;
         margin: 20px auto 36px auto;
         text-align: center;
 

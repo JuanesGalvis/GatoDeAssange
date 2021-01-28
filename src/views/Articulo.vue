@@ -1,49 +1,50 @@
 <template>
-    <main class="Articulo">
-    <Header active="1"/>
+    <div class="ArtituloRoot">
+        <Header active="1"/>
+        <main class="Articulo">
 
-        <section class="Articulo__Presentacion">
-            <article class="Articulo__Presentacion--info">
-                <h2> {{ title }} </h2>
-                <p> {{ categoria }} </p>
-            </article>
-            <article class="Articulo__Presentacion--Imagen">
-                <img :src="imagen" :alt="title">
-            </article>
-        </section>
-        <div class="Share">
-          <i class="fab fa-telegram-plane"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-twitter"></i>
-        </div>
-        <section class="Articulo__Sinapsis">
-            <p>
-                {{ sinopsis }} 
-            </p>
-        </section>
+            <section class="Articulo__Presentacion">
+                <article class="Articulo__Presentacion--info">
+                    <h2> {{ title }} </h2>
+                    <p> {{ categoria }} </p>
+                </article>
+                <article class="Articulo__Presentacion--Imagen">
+                    <img :src="imagen" :alt="title">
+                </article>
+            </section>
+            <div class="Share">
+            <i class="fab fa-telegram-plane"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>
+            </div>
+            <section class="Articulo__Sinapsis">
+                <p>
+                    {{ sinopsis }} 
+                </p>
+            </section>
 
-        <a :href="link" target="_blank"><button class="Btn_Articulo">
-            <span>Leer Artículo</span>
-            <img src="../assets/Btn_Leer_Articulo.png" alt="Gato con documentos y gafas">  
-        </button></a>
+            <a :href="link" target="_blank"><button class="Btn_Articulo">
+                <span>Leer Artículo</span>
+                <img src="../assets/Btn_Leer_Articulo.png" alt="Gato con documentos y gafas">  
+            </button></a>
 
-        <h2>Comentarios</h2>
-        <hr>
-        <div class="Input__Comentario">
-            <textarea name="Comentario" id="Comentario" cols="30" rows="4" placeholder="Comentario" v-model="newComentario"></textarea>
-            <i class="far fa-paper-plane" @click="SendComentario()"></i>
-        </div>  
-        <hr>
+            <h2>Comentarios</h2>
+            <hr>
+            <div class="Input__Comentario">
+                <textarea name="Comentario" id="Comentario" cols="30" rows="4" placeholder="Comentario" v-model="newComentario"></textarea>
+                <i class="far fa-paper-plane" @click="SendComentario()"></i>
+            </div>  
+            <hr>
 
-        <section class="Comentarios">
-            <article class="Comentarios__Item" v-for="comentario in comentarios" :key="comentario.id">
-                <p> {{ comentario.contenido }} </p>
-            </article>
-        </section>
+            <section class="Comentarios">
+                <article class="Comentarios__Item" v-for="comentario in comentarios" :key="comentario.id">
+                    <p> {{ comentario.contenido }} </p>
+                </article>
+            </section>
 
-    <Footer />
-    </main>
-
+        <Footer />
+        </main>
+    </div>
 </template>
 
 <script>
@@ -119,6 +120,14 @@ export default {
 
 <style lang="scss">
 @import '../styles/global.scss';
+
+.ArtituloRoot {
+    @media screen and (min-width: 530px){
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 .Articulo {
 

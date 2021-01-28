@@ -1,6 +1,8 @@
 <template>
   <header class="Cabecera">
-      <img class="Cabecera__Logo" alt="Vue logo" src="../assets/logo.png">
+      <figure>
+        <img class="Cabecera__Logo" alt="Vue logo" src="../assets/logo.png">
+      </figure>
       <ul class="Cabecera__Menu">
         <li v-bind:id="active == '1' ? 'Activo' : 'Normal'"> <router-link to="/">Artículos</router-link></li>
         <li v-bind:id="active == '2' ? 'Activo' : 'Normal'"><router-link to="/caricaturas">Caricaturas</router-link></li>
@@ -25,6 +27,30 @@ export default {
 .Cabecera{
   background-color: $Dark;
   width: 100%;
+
+  @media screen and (min-width: 530px){
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+
+      figure {
+        position: fixed;
+        width: 50%;
+        left: 1vw;
+        top: 25vh;
+      }
+
+      &__Menu {
+        flex-direction: column;
+        position: fixed;
+        top: 50vh;
+        left: 19vw;
+        
+        li {
+          margin: 5px auto;
+        }
+      }
+  }
 
   &__Logo {
       width: 60%;

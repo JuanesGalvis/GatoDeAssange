@@ -1,10 +1,10 @@
 <template>
   <div class="home">
     <Header active="1"/>
+    <main class="Articulos">
     <div class="Banner">
       <h1 class="Banner__Home">"Porque las personas que son tan locas y creen que pueden cambiar el mundo, son las que lo hacen"</h1>
     </div>
-    <main class="Articulos">
       <h2>Tecnología</h2>
       <section class="Secciones">
         <article class="articulo" v-for="art in ArtTec" :key="art._id">
@@ -26,9 +26,8 @@
         </article>
       </section>
 
-    </main>
     <Footer />
-
+    </main>
   </div>
 </template>
 
@@ -93,6 +92,14 @@ export default {
 
 <style lang="scss">
 @import '../styles/global.scss';
+
+  .home {
+    @media screen and (min-width: 530px){
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+  }
 
   .Banner {
     background-image: url('../assets/Banner.png');
