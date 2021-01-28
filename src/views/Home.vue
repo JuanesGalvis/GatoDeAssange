@@ -117,6 +117,15 @@ export default {
       font-family: $FuenteTitlos;
       font-size: 18px;
       text-align: center;
+
+      @media screen and (min-width: 1000px){
+        font-size: 20px;  
+      }
+
+      @media screen and (min-width: 1164px){
+        width: 350px;
+        font-size: 25px;  
+      }
     }
   }
 
@@ -130,11 +139,25 @@ export default {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin-left: 10px;
-    
+    text-align: center;
+
+    @media screen and (min-width: 1164px){
+      grid-template-columns: repeat(3, 1fr); 
+    }
+
     .articulo {
       img {
         border-radius: 10px;
         width: 90%;
+        margin: 10px auto;
+
+        @media screen and (min-width: 750px){
+          width: 70%;  
+        }
+
+        @media screen and (min-width: 1164px){
+          width: 80%;  
+        }
       }
     }
   }

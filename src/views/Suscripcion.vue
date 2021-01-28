@@ -142,6 +142,7 @@ export default {
         display: grid;
         width: 100%;
         grid-template-columns: repeat(2, 1fr);
+        height: 100vh;
     }
  }
 

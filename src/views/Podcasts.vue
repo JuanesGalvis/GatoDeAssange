@@ -90,6 +90,16 @@ export default {
       font-family: $FuenteTitlos;
       font-size: 18px;
       text-align: center;
+    
+      @media screen and (min-width: 1000px){
+        font-size: 22px;  
+      }
+
+      @media screen and (min-width: 1164px){
+        width: 350px;
+        font-size: 25px;  
+      }
+    
     }
   }
 
@@ -168,6 +178,12 @@ export default {
           font-size: 23px;
           border-radius: 10px;
           height: 40px;
+        
+          @media screen and (min-width: 880px) {
+              width: 70%;
+              margin: 0 auto;
+          }
+        
         }
       }
   }

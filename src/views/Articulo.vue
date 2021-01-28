@@ -12,17 +12,11 @@
                     <img :src="imagen" :alt="title">
                 </article>
             </section>
-            <div class="Share">
-            <i class="fab fa-telegram-plane"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-twitter"></i>
-            </div>
             <section class="Articulo__Sinapsis">
                 <p>
                     {{ sinopsis }} 
                 </p>
             </section>
-
             <a :href="link" target="_blank"><button class="Btn_Articulo">
                 <span>Leer Artículo</span>
                 <img src="../assets/Btn_Leer_Articulo.png" alt="Gato con documentos y gafas">  
@@ -137,6 +131,8 @@ export default {
         align-items: center;
         justify-content: center;
         margin: 15px auto;
+        background-image: url('../assets/Banner.png');
+        background-size: cover;
 
         &--info {
 
@@ -171,17 +167,6 @@ export default {
         color: $Texto-Gris;
         width: 90%;
         margin: 10px auto;
-    }
-
-    .Share {
-        width: 90%;
-        display: flex;
-        justify-content: space-around;
-        color: $Dark;
-        text-align: center;
-        align-items: center;
-        font-size: 23px;
-        height: 40px;
     }
 
     a {
@@ -242,12 +227,19 @@ export default {
         i.fa-paper-plane {
             position: absolute;
             bottom: 10px;
-            right: 20px;
+            right: 7vw;
             color: $Principal-Blanco;
             background-color: $Dark;
             font-size: 18px;
             padding: 5px;
             border-radius: 100%;
+        
+
+            @media screen and (min-width: 530px){
+               right: 3vw;
+            }
+            
+        
         }
     }
 

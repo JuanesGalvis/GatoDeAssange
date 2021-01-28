@@ -52,6 +52,17 @@ export default {
       }
   }
 
+  @media screen and (min-width: 1040px){
+    &__Menu {
+        top: 55vh;
+        left: 21vw;
+        
+        li {
+          margin: 10px auto;
+        }
+      }
+  }
+
   &__Logo {
       width: 60%;
       margin: 0 auto;
