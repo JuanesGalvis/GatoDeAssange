@@ -9,7 +9,7 @@ const venv = require('./env')
 
 // Iniciar Base de datos
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(process.env.MONGO, {
     useNewUrlParser: true,
     useUnifiedTopology: true
     })
@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGO_URL, {
 
 // iniciar aplicación
 const app = express();
-app.set('port', process.env.PORT)
+app.set('port', process.env.PORT || 3000)
 app.use(express.json());
 app.use(require('./routes/routes.js'))
 
