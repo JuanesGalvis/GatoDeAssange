@@ -20,6 +20,9 @@ export default {
     name: 'Donar',
     components: {
         Header
+    },
+    created() {
+        document.querySelector('title').innerText = 'Donar';
     }
 }
 </script>

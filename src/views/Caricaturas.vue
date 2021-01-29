@@ -38,6 +38,7 @@ export default {
     }
   },
   created() {
+    document.querySelector('title').innerText = 'Caricaturas';
     this.GetCaricaturas();
   },
   methods: {

@@ -51,6 +51,8 @@ export default {
     Footer
   },
   created() {
+      document.querySelector('title').innerText = 'El Gato de Assange';
+
       this.GetData();
   },
   methods: {

@@ -108,6 +108,9 @@ export default {
         this.errorTema = false;
       }
     },
+  },
+  created() {
+    document.querySelector('title').innerText = 'Pedir Caricatura';
   }
 }
 </script>

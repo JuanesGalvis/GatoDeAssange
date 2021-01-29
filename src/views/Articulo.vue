@@ -73,6 +73,8 @@ export default {
             .then(response => response.json())
             .then((data) => {
                 this.title = data.titulo
+                document.querySelector('title').innerText = this.title;    
+
                 this.sinopsis = data.sinapsis
                 this.imagen = data.imagen
                 this.categoria = data.categoria

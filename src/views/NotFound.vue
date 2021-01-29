@@ -7,7 +7,10 @@
 
 <script>
 export default {
-    name: 'NotFound'
+    name: 'NotFound',
+    created() {
+        document.querySelector('title').innerText = 'Página no encontrada';
+    }
 }
 </script>
 

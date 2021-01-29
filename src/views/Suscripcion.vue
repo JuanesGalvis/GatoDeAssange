@@ -130,6 +130,9 @@ export default {
         this.errorEmail = true;
       } 
     },
+  },
+  created() {
+    document.querySelector('title').innerText = 'Suscribirse';
   }
 }
 </script>

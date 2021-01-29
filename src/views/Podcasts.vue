@@ -42,6 +42,7 @@ export default {
     }
   },
   created() {
+    document.querySelector('title').innerText = 'Podcasts';
     this.GetPodcasts();
   },
   methods: {
