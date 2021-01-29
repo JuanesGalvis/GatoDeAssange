@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "start": "nodemon server.js",
     "build": "vue-cli-service build --watch",
     "test:unit": "vue-cli-service test:unit",
     "webpack": "webpack --mode development --watch",

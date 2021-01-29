@@ -25,8 +25,8 @@
 
     </form>
 
-    </main>
     <Footer />
+    </main>
   </div>
 </template>
 
@@ -115,8 +115,17 @@ export default {
 <style lang="scss">
 @import '../styles/global.scss';
 
+.PedirCaricatura{
+  height: 100vh;
+  @media screen and (min-width: 530px){
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .Form_PedirCaricatura {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 
   h1 {
@@ -132,6 +141,9 @@ export default {
   }
 
   form {
+    width: 90%;
+    margin: 0 auto;
+    height: 80vh;
     label {
       font-size: 18px;
       font-family: $FuenteTitlos;
@@ -149,6 +161,9 @@ export default {
         position: absolute;
         right: 20px;
         top: 45px;
+      @media screen and (min-width: 930px){
+          right: 40px;
+        }
       }
 
       .check {
