@@ -4,9 +4,6 @@ const mongoose = require('mongoose')
 
 const bodyParser = require('body-parser')    
 
-const venv = require('./env')
-
-
 // Iniciar Base de datos
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGO, {
