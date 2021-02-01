@@ -2,9 +2,14 @@
     <footer class="Footer">
         <h2>Si te gusta mi contenido:</h2>
         <div class="Footer__Botones">
-            <router-link to="/suscripcion"><button class="Btn_Suscp">Suscribirse <i class="far fa-bell"></i> </button></router-link>
-            <router-link to="/donar"><button class="Btn_Donar"><i class="fas fa-hand-holding-usd"></i> Donar</button></router-link>
+            <router-link to="/suscripcion" class="routerLink"><button class="Btn_Suscp">Suscribirse <i class="far fa-bell"></i> </button></router-link>
+            <router-link to="/donar" class="routerLink"><button class="Btn_Donar"><i class="fas fa-hand-holding-usd"></i> Donar</button></router-link>
         </div>
+        <div class="Redes">
+            <a target="_blank" href="https://twitter.com/ElGatoDeAssange"><i class="fab fa-instagram"></i> <span>Instagram</span></a>
+            <a target="_blank" href="https://www.instagram.com/elgatodeassange/"><i class="fab fa-twitter"></i> <span>Twitter</span></a>
+        </div>
+        <p>Versión: 1.0.0 <i class="fab fa-github"></i> </p>
     </footer>
 </template>
 
@@ -31,11 +36,13 @@ export default {
     &__Botones {
         display: flex;
         justify-content: space-around;
+        width: 50%;
+        margin: 0 auto;
         align-items: center;
         align-content: center;
         padding-bottom: 20px;
 
-        a {
+        .routerLink {
             text-decoration: none;
             .Btn_Suscp, .Btn_Donar {
                 border: $Principal-Blanco 5px solid;
@@ -68,7 +75,51 @@ export default {
             }
         }
     }
+    p {
+        font-size: 15px;
+        color: $Texto-Gris-Claro;
+        font-family: $FuenteTitlos;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0px;
+        margin-top: 10px;
+    }
 
+    .Redes {
+        font-size: 25px;
+        margin: 10px auto;
+        text-align: center;
+        font-family: $FuenteContenidos;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: fit-content;
+        margin: 0 auto;
+
+        a {
+            color: $Principal-Azul-Claro;
+            text-decoration: none;
+
+            i {
+                margin-top: 20px;
+            }
+    
+            span {
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (min-width: 530px){
+            flex-direction: row;
+            justify-content: space-between;
+
+            i {
+                margin-top: 0px;
+                margin-left: 20px;
+            }
+        }
+    }
 }
 
 </style>
