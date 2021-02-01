@@ -8,6 +8,7 @@
         <div class="Redes">
             <a target="_blank" href="https://www.instagram.com/elgatodeassange/"><i class="fab fa-instagram"></i> <span>Instagram</span></a>
             <a target="_blank" href="https://twitter.com/ElGatoDeAssange"><i class="fab fa-twitter"></i> <span>Twitter</span></a>
+            <a target="_blank" href="https://www.facebook.com/GatoDeAssange"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a>
         </div>
         <p>Versión: 1.0.0 <i class="fab fa-github"></i> </p>
     </footer>
