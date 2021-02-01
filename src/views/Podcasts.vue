@@ -4,7 +4,7 @@
     <Header active="3"/>
     <main id="Podcasts">
     <div class="Banner">
-      <h1 class="Banner__Podcasts">"Facebook y EEUU te escuchan. Tú escuchame a mí"</h1>
+      <h1 class="Banner__Podcasts">"Facebook y EEUU te escuchan. Tú escuchame a mí" </h1>
     </div>
 
     <router-link to="/pedir_podcast">
@@ -18,6 +18,9 @@
         <h4> {{ podcast.titulo }} </h4>
         <p> {{ podcast.descripcion }} </p>
         <h3 v-if="podcast.invitado != 'Ninguno'" > Invitado: {{ podcast.invitado  }} </h3>
+      </article>
+      <article class="Vacio" v-if="empty">
+          <h2> ⌛ Próximamente: andamos grabando, mientras tanto puedes  <router-link to="/pedir_podcast"><b> sugerirme temas </b></router-link> ⌛</h2>
       </article>
     <Footer />
     </main>
@@ -38,7 +41,8 @@ export default {
   },
   data() {
     return {
-      Podcasts: []
+      Podcasts: [],
+      empty: true
     }
   },
   created() {
@@ -52,6 +56,7 @@ export default {
          )
          .then((data) => {
            this.Podcasts = {...data}
+           data.length == 0 ? this.empty = true : this.empty = false;
          })
     }
   }
@@ -161,8 +166,19 @@ export default {
           color: $Texto-Gris;
           width: 100%;
           margin: 16px auto;
+          font-size: 30px;
         }
       }
+  }
+
+  .Vacio {
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+    height: 40vh;
+    font-family: $FuenteTitlos;
+    color: $Texto-Gris;
+    margin: 10px auto;
   }
 
 </style>

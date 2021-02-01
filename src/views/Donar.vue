@@ -9,6 +9,7 @@
                 <img src="../assets/QR-Tutorial.jpg" alt="Tutorial dentro de Nequi para pagar con el QR">
                 <img src="../assets/QR.jpg" alt="Código QR para donar mediante Nequi Bancolombia">            
             </section>
+            <p>⌛ Próximamente: PayPal y Patreon ⌛</p>
         </main>
     </div>
 </template>
