@@ -17,7 +17,7 @@
                     {{ sinopsis }} 
                 </p>
             </section>
-            <a :href="link" target="_blank"><button class="Btn_Articulo">
+            <a :href="link" target="_blank" rel="noopener"><button class="Btn_Articulo">
                 <span>Leer Artículo</span>
                 <img src="../assets/Btn_Leer_Articulo.png" alt="Gato con documentos y gafas">  
             </button></a>
