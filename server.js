@@ -37,7 +37,7 @@ app.use('/donar', express.static(__dirname+'/dist'))
 app.use('/pedir_caricatura', express.static(__dirname+'/dist'))
 app.use('/pedir_podcast', express.static(__dirname+'/dist'))
 
-app.use('/articulo', express.static(__dirname+'/dist'))
+app.use('/articulo/:id', express.static(__dirname+'/dist'))
 
 app.use('/not_Found', express.static(__dirname+'/dist'))
 

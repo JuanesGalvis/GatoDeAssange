@@ -47,7 +47,7 @@ const routes = [
     component: PedirPodcast
   },
   {
-    path: '/articulo',
+    path: '/articulo/:id',
     name: 'Articulo',
     component: Articulo
   },

@@ -10,7 +10,7 @@
             <a target="_blank" rel="noopener" href="https://twitter.com/ElGatoDeAssange"><i class="fab fa-twitter"></i> <span>Twitter</span></a>
             <a target="_blank" rel="noopener" href="https://www.facebook.com/GatoDeAssange"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a>
         </div>
-        <p>Versión: 1.0.0 <i class="fab fa-github"></i> </p>
+        <p>Versión: 1.0.1 <i class="fab fa-github"></i> </p>
     </footer>
 </template>
 

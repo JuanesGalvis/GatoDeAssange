@@ -52,6 +52,16 @@ export default {
   },
   created() {
       document.querySelector('title').innerText = 'El Gato de Assange';
+      /** OG */
+      document.querySelector('meta[property="og:image"]').content = "https://i.postimg.cc/fyxSYkhz/Meta-Imagen-2x.png";
+      document.querySelector('meta[property="og:url"]').content = "https://gato-assange.herokuapp.com";
+      document.querySelector('meta[property="og:description"]').content = "Blog independiente sobre Tecnología 💻 - Política 🗽 y Sociedad 🤝. Además de Caricaturas y futuros Podcasts.";
+      document.querySelector('meta[property="og:title"]').content = "El Gato de Assange";
+      // twitter Card
+      document.querySelector('meta[name="twitter:image:src"]').content = "https://i.postimg.cc/fyxSYkhz/Meta-Imagen-2x.png";
+      document.querySelector('meta[name="twitter:url"]').content = "https://gato-assange.herokuapp.com";
+      document.querySelector('meta[name="twitter:description"]').content = "Blog independiente sobre Tecnología 💻 - Política 🗽 y Sociedad 🤝. Además de Caricaturas y futuros Podcasts.";
+      document.querySelector('meta[name="twitter:title"]').content = "El Gato de Assange";
 
       this.GetData();
   },
@@ -84,8 +94,7 @@ export default {
         },
 
         IdURL(id) {
-          localStorage.setItem('ArtId', id)
-          window.location.href = '/articulo';
+          window.location.href = `/articulo/${id}`;
         }
   }
 }

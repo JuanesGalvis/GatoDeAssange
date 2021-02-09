@@ -6,7 +6,10 @@
             <section class="Articulo__Presentacion">
                 <article class="Articulo__Presentacion--info">
                     <h2> {{ title }} </h2>
-                    <p> {{ categoria }} </p>
+                    <p>
+                        <!-- TWITTER -->
+                        <a target="_blank" rel="noopener" href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="true">Tweet</a>
+                    </p>
                 </article>
                 <article class="Articulo__Presentacion--Imagen">
                     <img :src="imagen" :alt="title">
@@ -21,9 +24,10 @@
                 <span>Leer Artículo</span>
                 <img src="../assets/Btn_Leer_Articulo.png" alt="Gato con documentos y gafas">  
             </button></a>
-
-            <h2>Comentarios</h2>
             <hr>
+            
+            <h2>Comentarios</h2>
+
             <div class="Input__Comentario">
                 <textarea name="Comentario" id="Comentario" cols="30" rows="4" placeholder="Comentario" v-model="newComentario" @keypress="DetectarKeyPress($event)"></textarea>
                 <i class="far fa-paper-plane" @click="SendComentario()" ></i>
@@ -63,7 +67,7 @@ export default {
         Footer
     },
     created() {
-        const idArt = localStorage.getItem('ArtId')
+        const idArt = this.$route.params.id;
         this.GetArticleData(idArt);
     },
     methods: {
@@ -73,6 +77,18 @@ export default {
             .then(response => response.json())
             .then((data) => {
                 this.title = data.titulo
+
+                /** OG */
+                document.querySelector('meta[property="og:image"]').content = data.cover;
+                document.querySelector('meta[property="og:url"]').content = `https://gato-assange.herokuapp.com/${this.$route.fullPath}`;
+                document.querySelector('meta[property="og:description"]').content = data.sinapsis;
+                document.querySelector('meta[property="og:title"]').content = data.titulo;
+                // twitter Card
+                document.querySelector('meta[name="twitter:image:src"]').content = data.cover;
+                document.querySelector('meta[name="twitter:url"]').content = `https://gato-assange.herokuapp.com/${this.$route.fullPath}`;
+                document.querySelector('meta[name="twitter:description"]').content = data.sinapsis;
+                document.querySelector('meta[name="twitter:title"]').content = data.titulo;
+                // title
                 document.querySelector('title').innerText = this.title;    
 
                 this.sinopsis = data.sinapsis
